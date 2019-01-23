@@ -10,10 +10,12 @@ public class MakeAShape {
 
         Scanner myScanner = new Scanner(System.in);
 
-        System.out.println("What shape would you like to make? [PLEASE ENTER: circle, square, or triangle");
-        String userChoice = myScanner.next();
 
         do {
+
+            System.out.println("What shape would you like to make? [PLEASE ENTER: circle, square, or triangle");
+            String userChoice = myScanner.next();
+
             if (userChoice.equals("circle")) {
                 Circle userCircle = new Circle();
                 System.out.println("What is the radius of your circle?");
@@ -30,11 +32,11 @@ public class MakeAShape {
                 System.out.println("Would you like to create another shape? [y or n]");
                 String another = myScanner.next();
 
-                if(another.equals("n")) {
+                if(another.equals("n")){
                     keepGoing = false;
-                    }
+                }
 
-            } else if (userChoice.equals("square")) {
+            } else if(userChoice.equals("square")) {
                 Square userSquare = new Square();
                 System.out.println("What is the length of the side of the square?");
                 userSquare.setLengthOfSide(myScanner.nextInt());
@@ -47,10 +49,17 @@ public class MakeAShape {
                 System.out.println("Would you like to create another shape? [y or n]");
                 String another = myScanner.next();
 
-                if(another.equals("n")) {
+                if(another.equals("n")){
                     keepGoing = false;
                 }
+
+            } else if(userChoice.equals("triangle")) {
+                System.out.println("Triangle will go here.");
+
+            } else {
+                System.out.println("Please try again.");
             }
+
 
         } while (keepGoing);
 
